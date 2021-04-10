@@ -13,22 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    
-});
-Route::get('/about', function () {
-    return "Welcome, Spartans";
-});
-Route::get('/contact', function () {
-    // return view('welcome');
-    return "Not welcome, Arcadians";
-});
-Route::get('/post/{id}', function ($id) {
-    return "This is Athenian boylover number " . $id;
-});
-
-Route::get('admin/posts/example',array('as'=>'admin.home',function(){
-    $url = route('admin.home');
-    return "This url is " . $url;
-}));
+// Route::get('/', function () {return view('welcome');});
+// Route::resource('/posts','PostsController');
+// http://127.0.0.1:8000/contact
+Route::get('/contact','PostsController@contact');
+// http://127.0.0.1:8000/post/10/34/23
+Route::get('/post/{id}/{name}/{password}','PostsController@show_post');

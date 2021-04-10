@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index($id)
+    { 
+        return 'The index method is working and the number is ' . $id ;
     }
 
     /**
@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return 'The create method is working';
     }
 
     /**
@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'The show method is working' ;
     }
 
     /**
@@ -80,5 +80,14 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function contact(){
+        return view('contact');
+    }
+    public function show_post($id,$name,$password){
+        // return view('post')->with('id',$id);
+        // return view('post',compact('id'));
+        return view('post',compact('id','name','password'));
+
     }
 }
