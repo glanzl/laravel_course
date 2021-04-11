@@ -82,7 +82,9 @@ class PostsController extends Controller
         //
     }
     public function contact(){
-        return view('contact');
+
+       $people= ['Edwin','Jose','James','Peter','Maria' ];
+        return view('contact',compact('people'));
     }
     public function show_post($id,$name,$password){
         // return view('post')->with('id',$id);
@@ -90,4 +92,5 @@ class PostsController extends Controller
         return view('post',compact('id','name','password'));
 
     }
+    
 }

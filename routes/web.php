@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/contact','PostsController@contact');
 // http://127.0.0.1:8000/post/10/34/23
 Route::get('/post/{id}/{name}/{password}','PostsController@show_post');
+
